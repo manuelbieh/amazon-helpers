@@ -1,0 +1,28 @@
+{
+  "name": "amazon-helpers",
+  "version": "0.1.0",
+  "description": "Some tiny helper functions for Amazon URLs",
+  "main": "dist/amazon-helpers.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "babel src/amazon-helpers.js -o dist/amazon-helpers.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/manuelbieh/amazon-helpers.git"
+  },
+  "keywords": [
+    "amazon",
+    "asin"
+  ],
+  "author": "Manuel Bieh",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/manuelbieh/amazon-helpers/issues"
+  },
+  "homepage": "https://github.com/manuelbieh/amazon-helpers#readme",
+  "devDependencies": {
+    "babel": "^5.8.23",
+    "mocha": "^2.3.2"
+  }
+}
