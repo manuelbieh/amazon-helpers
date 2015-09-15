@@ -1,4 +1,4 @@
-# Amazon Helpers
+# Amazon Helpers [![Build Status](https://travis-ci.org/manuelbieh/amazon-helpers.svg?branch=master)](https://travis-ci.org/manuelbieh/amazon-helpers)
 
 Tiny helper library to extract an ASIN/ISBN number from an Amazon URL or create a (optionally localized) Amazon URL out of an ASIN/ISBN.
 
