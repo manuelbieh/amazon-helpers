@@ -1,3 +1,11 @@
+/*! amazon-helpers by Manuel Bieh
+* Tiny helper library to extract an ASIN/ISBN number from an Amazon URL or create a (optionally localized) Amazon URL out of an ASIN/ISBN.
+* 
+* @author Manuel Bieh
+* @url http://www.manuelbieh.com/
+* @license MIT
+**/
+
 'use strict';
 
 Object.defineProperty(exports, '__esModule', {
