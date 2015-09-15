@@ -19,6 +19,7 @@ Just require the library like any other npm module:
 ### .getIdent(urlOrAsin)
 
 `amazonHelpers.getIdent('http://www.amazon.com/gp/product/B000MTST70/')`
+
 => `B000MTST70`
 
 - - -
@@ -26,10 +27,12 @@ Just require the library like any other npm module:
 ### .getProductUrl(urlOrAsin[, tld])
 
 `amazonHelpers.getProductUrl('B000MTST70')`
+
 => `http://www.amazon.com/dp/B000MTST70`
 
 You can specify a TLD as second argument to convert your URL to another country
 `amazonHelpers.getProductUrl('B000MTST70', 'co.uk')`
+
 => `http://www.amazon.co.uk/dp/B000MTST70`
 
 **Attention:** The library does not check if the product exists in the given TLD!
