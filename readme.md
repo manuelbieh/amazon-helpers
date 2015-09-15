@@ -12,18 +12,18 @@ Just require the library like any other npm module:
 
 `var amazonHelpers = require('amazon-helpers');`
 
-### Methods
+## Methods
 
-- - -
 
-#### .getIdent(urlOrAsin)
+
+### .getIdent(urlOrAsin)
 
 `amazonHelpers.getIdent('http://www.amazon.com/gp/product/B000MTST70/')`
 => `B000MTST70`
 
 - - -
 
-#### .getProductUrl(urlOrAsin[, tld])
+### .getProductUrl(urlOrAsin[, tld])
 
 `amazonHelpers.getProductUrl('B000MTST70')`
 => `http://www.amazon.com/dp/B000MTST70`
@@ -36,7 +36,7 @@ You can specify a TLD as second argument to convert your URL to another country
 
 - - -
 
-#### .getIdent(urlOrAsin)
+### .getIdent(urlOrAsin)
 
 `amazonHelpers.getIdentByUrl('http://amazon.com/gp/product/B00L3KNWBU')`
 => `{ asin: 'B00L3KNWBU', tld: 'com' }`
