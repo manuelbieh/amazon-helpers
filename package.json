@@ -1,6 +1,6 @@
 {
   "name": "amazon-helpers",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Some tiny helper functions for Amazon URLs",
   "main": "dist/amazon-helpers.js",
   "scripts": {
