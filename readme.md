@@ -39,7 +39,7 @@ You can specify a TLD as second argument to convert your URL to another country
 
 - - -
 
-### .getIdent(urlOrAsin)
+### .getIdentByUrl(urlOrAsin)
 
 `amazonHelpers.getIdentByUrl('http://amazon.com/gp/product/B00L3KNWBU')`
 
