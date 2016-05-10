@@ -54,6 +54,10 @@ let helpers = {
 
     },
 
+    getSecureProductUrl: (urlOrAsin, tld) => {
+        return helpers.getProductUrl(urlOrAsin, tld).replace(/^http:/,'https:');
+    },
+
     getIdentByUrl: (url) => {
 
         const URLREGEX = /https?:\/\/(www\.)?(.*)amazon\.([a-z\.]{2,5})\/(.*)\/?(?:dp|o|gp|-)\/(aw\/d\/|product\/)?(B[0-9]{2}[0-9A-Z]{7}|[0-9]{9}(?:X|[0-9]))/;
@@ -72,4 +76,4 @@ let helpers = {
 
 };
 
-export default helpers;
+module.exports = helpers;

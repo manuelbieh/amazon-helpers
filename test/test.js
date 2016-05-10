@@ -97,6 +97,59 @@ describe('amazonHelpers', function() {
 
     });
 
+    describe('#getSecureProductUrl()', function() {
+
+        it('should return a https product URL', function () {
+
+            assert.equal(
+                amazonHelpers.getSecureProductUrl('http://www.amazon.de/Highland-Park-Single-Scotch-Whisky/dp/B002E2LO5M/'),
+                'https://www.amazon.de/dp/B002E2LO5M'
+            );
+
+            assert.equal(
+                amazonHelpers.getSecureProductUrl('http://www.amazon.com/gp/product/B000MTST70/'),
+                'https://www.amazon.com/dp/B000MTST70'
+            );
+
+            assert.equal(
+                amazonHelpers.getSecureProductUrl('http://www.amazon.fr/Saveur-degustation-Plaque-perfore-baguettes/dp/B004U95E80/'),
+                'https://www.amazon.fr/dp/B004U95E80'
+            );
+
+            assert.equal(
+                amazonHelpers.getSecureProductUrl('http://www.amazon.co.jp/Wrong-Pick-Girls-Dungeon-manga-ebook/dp/B00XMG4CYE/ref=sr_1_1?ie=UTF8&qid=1442276590&sr=8-1&keywords=manga'),
+                'https://www.amazon.co.jp/dp/B00XMG4CYE'
+            );
+
+            assert.equal(
+                amazonHelpers.getSecureProductUrl('B002E2LO5M'),
+                'https://www.amazon.com/dp/B002E2LO5M'
+            );
+
+            assert.equal(
+                amazonHelpers.getSecureProductUrl('B002E2LO5M', 'de'),
+                'https://www.amazon.de/dp/B002E2LO5M'
+            );
+
+
+        });
+
+        it('should return a https product URL for a specific TLD', function () {
+
+            assert.equal(
+                amazonHelpers.getSecureProductUrl('http://www.amazon.com/AmazonBasics-High-Speed-HDMI-Cable-2-Pack/dp/B00L3KNWBU/ref=sr_1_3?ie=UTF8', 'co.uk'),
+                'https://www.amazon.co.uk/dp/B00L3KNWBU'
+            );
+
+            assert.equal(
+                amazonHelpers.getSecureProductUrl('http://amazon.com/dp/0596519796', 'de'),
+                'https://www.amazon.de/dp/0596519796'
+            );
+
+        });
+
+    });
+
     describe('#getIdentByUrl()', function() {
 
         it('should return a identifier object containing country TLD and ASIN/ISBN for a specific URL', function () {
