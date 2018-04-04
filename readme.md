@@ -4,7 +4,13 @@ Tiny helper library to extract an ASIN/ISBN number from an Amazon URL or create 
 
 ## Installation
 
-`npm install amazon-helpers`
+```
+npm install amazon-helpers
+```
+or
+```
+yarn add amazon-helpers
+```
 
 ## Usage
 
