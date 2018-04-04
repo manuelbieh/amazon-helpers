@@ -57,4 +57,4 @@ For more examples have a look at the tests.
 
 ## License
 
-Licensed unter MIT.
+MIT.
