@@ -1,5 +1,3 @@
-'use strict';
-
 /*! amazon-helpers by Manuel Bieh
 * Tiny helper library to extract an ASIN/ISBN number from an Amazon URL or create a (optionally localized) Amazon URL out of an ASIN/ISBN.
 * 
@@ -8,13 +6,15 @@
 * @license MIT
 **/
 
+'use strict';
+
 var helpers = {
 
     getIdent: function getIdent(urlOrAsin) {
 
         if (typeof urlOrAsin === 'string' && (urlOrAsin.length === 10 // ASIN
-         || urlOrAsin.length === 13 // ISBN
-        ) && !!urlOrAsin.match(/^([a-zA-Z0-9]*)$/) === true) {
+         || urlOrAsin.length === 13) // ISBN
+         && !!urlOrAsin.match(/^([a-zA-Z0-9]*)$/) === true) {
 
             return urlOrAsin;
         }
@@ -36,8 +36,8 @@ var helpers = {
         }
 
         if (typeof urlOrAsin === 'string' && (urlOrAsin.length === 10 // ASIN
-         || urlOrAsin.length === 13 // ISBN
-        ) && !!urlOrAsin.match(/^([a-zA-Z0-9]*)$/) === true) {
+         || urlOrAsin.length === 13) // ISBN
+         && !!urlOrAsin.match(/^([a-zA-Z0-9]*)$/) === true) {
 
             tld = tld || 'com';
             return 'http://www.amazon.' + tld + '/dp/' + urlOrAsin;
@@ -45,12 +45,14 @@ var helpers = {
     },
 
     getSecureProductUrl: function getSecureProductUrl(urlOrAsin, tld) {
-        return helpers.getProductUrl(urlOrAsin, tld).replace(/^http:/, 'https:');
+        var url = helpers.getProductUrl(urlOrAsin, tld);
+        if (url === undefined) return;
+        return url.replace(/^http:/, 'https:');
     },
 
     getIdentByUrl: function getIdentByUrl(url) {
 
-        var URLREGEX = /https?:\/\/(www\.)?(.*)amazon\.([a-z\.]{2,5})\/(.*)\/?(?:dp|o|gp|-)\/(aw\/d\/|product\/)?(B[0-9]{2}[0-9A-Z]{7}|[0-9]{9}(?:X|[0-9]))/;
+        var URLREGEX = /https?:\/\/(www\.)?(.*)amazon\.([a-z\.]{2,6})\/(.*)\/?(?:dp|o|gp|-)\/(aw\/d\/|product\/)?(B[0-9]{2}[0-9A-Z]{7}|[0-9]{9}(?:X|[0-9]))/;
         var ident = typeof url === 'string' && url.match(URLREGEX);
 
         if (ident) {

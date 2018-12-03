@@ -69,6 +69,11 @@ describe('amazonHelpers', function() {
             );
 
             assert.equal(
+                amazonHelpers.getProductUrl('https://www.amazon.com.br/Amazon-53-000471-Adaptador-de-tomada/dp/B012ELKC28?pd_rd_wg=H80Sz&pd_rd_r=cd3ae90a-b15b-47f1-8ecb-bf6e411043a7&pd_rd_w=d87wN&ref_=pd_gw_ri&pf_rd_r=CHZDTR4ESF6GJD4MQKKA&pf_rd_p=bd217df5-79b4-5bf6-a295-379173023db6'),
+                'http://www.amazon.com.br/dp/B012ELKC28'
+            );
+
+            assert.equal(
                 amazonHelpers.getProductUrl('B002E2LO5M'),
                 'http://www.amazon.com/dp/B002E2LO5M'
             );
@@ -144,6 +149,15 @@ describe('amazonHelpers', function() {
             assert.equal(
                 amazonHelpers.getSecureProductUrl('http://amazon.com/dp/0596519796', 'de'),
                 'https://www.amazon.de/dp/0596519796'
+            );
+
+        });
+
+        it('should return undefined for non-Amazon URLs', function () {
+
+            assert.equal(
+                amazonHelpers.getSecureProductUrl('http://example.com/foo'),
+                undefined
             );
 
         });
