@@ -45,6 +45,23 @@ You can specify a TLD as second argument to convert your URL to another country
 
 - - -
 
+### .getSecureProductUrl(urlOrAsin[, tld])
+
+Like `.getProductUrl`, but returns `https://` instead of `http://`.
+
+`amazonHelpers.getProductUrl('B000MTST70')`
+
+=> `https://www.amazon.com/dp/B000MTST70`
+
+You can specify a TLD as second argument to convert your URL to another country
+`amazonHelpers.getSecureProductUrl('http://www.amazon.com/dp/B000MTST70', 'co.uk')`
+
+=> `https://www.amazon.co.uk/dp/B000MTST70`
+
+**Attention:** The library does not check if the product exists in the given TLD!
+
+- - -
+
 ### .getIdentByUrl(urlOrAsin)
 
 `amazonHelpers.getIdentByUrl('http://amazon.com/gp/product/B00L3KNWBU')`
