@@ -55,7 +55,9 @@ let helpers = {
     },
 
     getSecureProductUrl: (urlOrAsin, tld) => {
-        return helpers.getProductUrl(urlOrAsin, tld).replace(/^http:/,'https:');
+        let url = helpers.getProductUrl(urlOrAsin, tld)
+        if (url === undefined) return
+        return url.replace(/^http:/,'https:');
     },
 
     getIdentByUrl: (url) => {

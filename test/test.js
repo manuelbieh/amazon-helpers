@@ -153,6 +153,15 @@ describe('amazonHelpers', function() {
 
         });
 
+        it('should return undefined for non-Amazon URLs', function () {
+
+            assert.equal(
+                amazonHelpers.getSecureProductUrl('http://example.com/foo'),
+                undefined
+            );
+
+        });
+
     });
 
     describe('#getIdentByUrl()', function() {

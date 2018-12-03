@@ -45,7 +45,9 @@ var helpers = {
     },
 
     getSecureProductUrl: function getSecureProductUrl(urlOrAsin, tld) {
-        return helpers.getProductUrl(urlOrAsin, tld).replace(/^http:/, 'https:');
+        var url = helpers.getProductUrl(urlOrAsin, tld);
+        if (url === undefined) return;
+        return url.replace(/^http:/, 'https:');
     },
 
     getIdentByUrl: function getIdentByUrl(url) {
