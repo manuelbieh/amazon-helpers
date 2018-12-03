@@ -1,5 +1,3 @@
-'use strict';
-
 /*! amazon-helpers by Manuel Bieh
 * Tiny helper library to extract an ASIN/ISBN number from an Amazon URL or create a (optionally localized) Amazon URL out of an ASIN/ISBN.
 * 
@@ -8,13 +6,15 @@
 * @license MIT
 **/
 
+'use strict';
+
 var helpers = {
 
     getIdent: function getIdent(urlOrAsin) {
 
         if (typeof urlOrAsin === 'string' && (urlOrAsin.length === 10 // ASIN
-         || urlOrAsin.length === 13 // ISBN
-        ) && !!urlOrAsin.match(/^([a-zA-Z0-9]*)$/) === true) {
+         || urlOrAsin.length === 13) // ISBN
+         && !!urlOrAsin.match(/^([a-zA-Z0-9]*)$/) === true) {
 
             return urlOrAsin;
         }
@@ -36,8 +36,8 @@ var helpers = {
         }
 
         if (typeof urlOrAsin === 'string' && (urlOrAsin.length === 10 // ASIN
-         || urlOrAsin.length === 13 // ISBN
-        ) && !!urlOrAsin.match(/^([a-zA-Z0-9]*)$/) === true) {
+         || urlOrAsin.length === 13) // ISBN
+         && !!urlOrAsin.match(/^([a-zA-Z0-9]*)$/) === true) {
 
             tld = tld || 'com';
             return 'http://www.amazon.' + tld + '/dp/' + urlOrAsin;
